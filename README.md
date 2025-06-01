@@ -2,7 +2,7 @@
 a Simple Hackable Interpreter
 
 ## Goal
-The goal of this project is to implement the same simple, hackable interpreter core in as many languages as possible. For educational purposes, and to allow comparing the performance and features of different host languages.
+The goal of this project is to implement the same simple, hackable interpreter core in multiple host languages. For educational purposes, and to allow comparing the performance and features of different host languages.
 
 ## Motivation
 I can't remember a time when I didn't feel the urge to design and implement my own programming languages, to gain a deeper understanding and make it possible to build my own tools.
@@ -32,9 +32,10 @@ The repository is set up for sponsoring via Stripe and Liberapay, alternatively 
 ## Implementations
 
 - [Go](https://github.com/codr7/shi-go)
+- [Java](https://github.com/codr7/shi-java)
 
 ## Language
-The language we will implement is a strictly prefix, dynamically typed scripting language capable of recursively generating the Fibinacci sequence. The syntax is intentionally kept as simple as possible.
+The language implemented is a strictly prefix, dynamically typed scripting language capable of recursively generating the Fibinacci sequence. The syntax is intentionally kept as simple as possible.
 
 ```
 method fib [n Int]
@@ -59,3 +60,19 @@ The type of macros like `method` and `if`.
 ### Method
 The type of methods like `+` and `-`, as well as user defined methods like `fib`.
 
+## VM Operations
+
+### Branch(end pc)
+Pop value from stack and continue evaluating if it's truthy, otherwise jump to the end of the branch.
+
+### Get(source register)
+Get value from register and push on stack.
+
+### Goto(target pc)
+Jump to target pc.
+
+### Push(value)
+Push value on stack.
+
+### Put(target register)
+Pop value from stack and put in register.
