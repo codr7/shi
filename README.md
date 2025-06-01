@@ -47,6 +47,7 @@ method fib [n Int]
 ```
 
 ## Types
+The following types are provided.
 
 ### Bool
 The boolean type has two values, `T` and `F`.
@@ -61,6 +62,7 @@ The type of macros like `method` and `if`.
 The type of methods like `+` and `-`, as well as user defined methods like `fib`.
 
 ## VM Operations
+The following VM operations are provided. Note that all implementations allow adding new operations from user code.
 
 ### Branch end pc
 Pop value from stack and continue evaluating if it's truthy, otherwise jump to the end of the branch.
