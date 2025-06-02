@@ -64,17 +64,17 @@ The type of methods like `+` and `-`, as well as user defined methods like `fib`
 ## VM Operations
 The following VM operations are provided. Note that all implementations allow adding new operations from user code.
 
-### Branch end pc
+### Branch [end pc]
 Pop value from stack and continue evaluating if it's truthy, otherwise jump to the end of the branch.
 
-### Get source register
+### Get {source register]
 Get value from register and push on stack.
 
-### Goto target pc
+### Goto [target pc]
 Jump to target pc.
 
-### Push value
+### Push [value]
 Push value on stack.
 
-### Put target register
+### Put [target register]
 Pop value from stack and put in register.
