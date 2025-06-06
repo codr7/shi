@@ -64,10 +64,13 @@ The type of methods like `+` and `-`, as well as user defined methods like `fib`
 ## VM Operations
 The VM is primarily stack based, using registers for bindings; and provides the following operations. Note that all implementations allow adding new operations from user code.
 
+### Call [location, target method]
+Call target method.
+
 ### Branch [end pc]
 Pop value from stack and continue evaluating if it's truthy, otherwise jump to the end of the branch.
 
-### Get {source register]
+### Get [source register]
 Get value from register and push on stack.
 
 ### Goto [target pc]
