@@ -38,7 +38,7 @@ The repository is set up for sponsoring via Stripe and Liberapay, alternatively 
 The language implemented is a strictly prefix, dynamically typed scripting language capable of recursively generating the Fibinacci sequence. The syntax is intentionally kept as simple as possible.
 
 ```
-method fib [n Int]
+method fib (n Int)
   if < n 2
     n
   else
@@ -48,6 +48,9 @@ method fib [n Int]
 
 ## Types
 The following types are provided.
+
+### Binding
+The type of registers.
 
 ### Bool
 The boolean type has two values, `T` and `F`.
@@ -79,5 +82,8 @@ Jump to target pc.
 ### Push [value]
 Push value on stack.
 
-### Put [target register]
-Pop value from stack and put in register.
+### Put [target register, count]
+Pop values from stack and put in registers.
+
+### Return []
+Pop call and jump to return pc.
