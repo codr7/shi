@@ -73,6 +73,9 @@ say (1 2 3)
 ## Types
 The following types are provided.
 
+### Any
+The root of all types.
+
 ### Binding
 The type of bindings (values in registers).
 
@@ -101,7 +104,7 @@ The following macros are provided, adding more is trivial.
 If evaluates `expr1` if `cond` is truthy, else `expr2` (if provided).
 
 ### method [name] [arguments] [body]
-Defines a new method with specified `name`, `arguments` and `body`.
+Defines a new method with specified `name`, `arguments` and `body`. Arguments may optionally be suffixed with a type, which is checked when the method is called; defaults to `Any` if not provided.
 
 ## Methods
 ### + [x] [y]
