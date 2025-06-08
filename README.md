@@ -113,10 +113,10 @@ The following methods are provided, adding more is trivial.
 Adds `x` to `y` and pushes the result on stack.
 
 ### - [x] [y]
-Adds `x` to `y` and pushes the result on stack.
+Subtracts `x` from `y` and pushes the result on stack.
 
 ### * [x] [y]
-Adds `x` to `y` and pushes the result on stack.
+Multiplies `x` by `y` and pushes the result on stack.
 
 ### = [x] [y]
 Pushes `T` on stack if `x` equals `y`, otherwise `F`.
