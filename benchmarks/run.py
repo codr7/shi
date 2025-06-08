@@ -10,7 +10,13 @@ def fact(acc, n):
 ''',
 'fact(1, 15)'))
 
-print('fib', benchmark(500, '''
+print('fib1', benchmark(500, '''
 def fib(n):
   return n if n < 2 else fib(n - 1) + fib(n - 2)
 ''', 'fib(20)'))
+
+print('fib2', benchmark(500000, '''
+def fib(n, a, b):
+  return a if n == 0 else b if n == 1 else fib(n-1, b, a+b)
+''',
+'fib(20, 0, 1)'))
