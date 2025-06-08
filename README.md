@@ -52,7 +52,7 @@ fib2 1.14576449
 ```
 
 ## Language
-The language implemented out of the box is a strictly prefix, dynamically typed scripting language. The syntax is easy to replace/extend without touching the other parts of the implementation.
+The language implemented out of the box is a strictly prefix, dynamically typed scripting language. The syntax is easy to replace/extend without touching other parts of the implementation.
 
 ```
 method fib (n Int)
