@@ -52,7 +52,7 @@ fib2 1.14576449
 ```
 
 ## Language
-The language implemented is a strictly prefix, dynamically typed scripting language.
+The language implemented out of the box is a strictly prefix, dynamically typed scripting language. The syntax is easy to replace/extend without touching the other parts of the implementation.
 
 ```
 method fib (n Int)
@@ -91,29 +91,64 @@ The type of methods like `+` and `-`, as well as user defined methods like `fib`
 ### Time
 Durations of time.
 
-## VM Operations
+## VM
 The VM is primarily stack based, using registers for bindings; and provides the following operations. Note that all implementations allow adding new operations from user code.
 
-### Benchmark [rounds, end pc]
+### Operations
+#### Benchmark [rounds, end pc]
 Evaluate `rounds` times from the next operation to `end pc` and push elapsed time on stack.
 
-### Call [location, target method]
+#### Call [location, target method]
 Call target method. Host methods are called directly while script methods push an entry on the call stack and jump to the start of the method.
 
-### Branch [end pc]
+#### Branch [end pc]
 Pop value from stack and continue evaluating if it's truthy, otherwise jump to the end of the branch.
 
-### Get [source register]
+#### Get [source register]
 Get value from `source register` and push on stack.
 
-### Goto [target pc]
+#### Goto [target pc]
 Jump to `target pc`.
 
-### Push [value]
+#### Push [value]
 Push `value` on stack.
 
-### Put [target register, count]
+#### Put [target register, count]
 Pop `count` values from stack and put in `target register`s.
 
-### Return []
+#### Return []
 Pop entry from call stack and jump to its return pc.
+
+## Macros
+The following macros are provided, adding more is trivial.
+
+### benchmark [rounds] [body]
+`body` is repeated `rounds` times and the elapsed time is pushed on stack.
+
+### if [cond] [expr1] else [expr2]
+If evaluates `expr1` if `cond` is truthy, else `expr2` (if provided).
+
+### method [name] [arguments] [body]
+Defines a new method with specified `name`, `arguments` and `body`.
+
+## Methods
+### + [x] [y]
+Adds `x` to `y` and pushes the result on stack.
+
+### - [x] [y]
+Adds `x` to `y` and pushes the result on stack.
+
+### * [x] [y]
+Adds `x` to `y` and pushes the result on stack.
+
+### = [x] [y]
+Pushes `T` on stack if `x` equals `y`, otherwise `F`.
+
+### < [x] [y]
+Pushes `T` on stack if `x` is less than `y`, otherwise `F`.
+
+### > [x] [y]
+Pushes `T` on stack if `x` is greater than `y`, otherwise `F`.
+
+### say [what]
+Prints `what` followed by newline to standard output. 
