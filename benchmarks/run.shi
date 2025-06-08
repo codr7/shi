@@ -5,4 +5,4 @@ method fib (n Int)
     + fib - n 1
       fib - n 2
 
-say fib 10
+say benchmark 1000 fib 20
