@@ -64,8 +64,14 @@ The type of macros like `method` and `if`.
 ### Method
 The type of methods like `+` and `-`, as well as user defined methods like `fib`.
 
+### Time
+Durations of time.
+
 ## VM Operations
 The VM is primarily stack based, using registers for bindings; and provides the following operations. Note that all implementations allow adding new operations from user code.
+
+### Benchmark [rounds, end pc]
+Evaluate until `end pc` `rounds` times and push elapsed time on stack.
 
 ### Call [location, target method]
 Call target method.
