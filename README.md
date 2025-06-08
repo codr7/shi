@@ -107,6 +107,8 @@ If evaluates `expr1` if `cond` is truthy, else `expr2` (if provided).
 Defines a new method with specified `name`, `arguments` and `body`. Arguments may optionally be suffixed with a type, which is checked when the method is called; defaults to `Any` if not provided.
 
 ## Methods
+The following methods are provided, adding more is trivial.
+
 ### + [x] [y]
 Adds `x` to `y` and pushes the result on stack.
 
