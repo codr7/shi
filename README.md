@@ -63,6 +63,13 @@ method fib (n Int)
       fib - n 2
 ```
 
+Macros and methods have a fixed number of arguments, parens may be used to group expressions.
+
+```
+say (1 2 3)
+```
+`1 2 3`
+
 ## Types
 The following types are provided.
 
