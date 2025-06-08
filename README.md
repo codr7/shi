@@ -98,37 +98,37 @@ Durations of time.
 The following macros are provided, adding more is trivial.
 
 ### benchmark [rounds] [body]
-`body` is repeated `rounds` times and the elapsed time is pushed on stack.
+Repeat `body` `rounds` times and push elapsed time on stack.
 
 ### if [cond] [expr1] else [expr2]
-If evaluates `expr1` if `cond` is truthy, else `expr2` (if provided).
+Evaluate `expr1` if `cond` is truthy, else `expr2` (if provided).
 
 ### method [name] [arguments] [body]
-Defines a new method with specified `name`, `arguments` and `body`. Arguments may optionally be suffixed with a type, which is checked when the method is called; defaults to `Any` if not provided.
+Define a new method with specified `name`, `arguments` and `body`. Arguments may optionally be suffixed with a type, which is checked when the method is called; defaults to `Any` if not provided.
 
 ## Methods
 The following methods are provided, adding more is trivial.
 
 ### + [x] [y]
-Adds `x` to `y` and pushes the result on stack.
+Add `x` to `y` and push the result on stack.
 
 ### - [x] [y]
-Subtracts `x` from `y` and pushes the result on stack.
+Subtract `x` from `y` and push the result on stack.
 
 ### * [x] [y]
-Multiplies `x` by `y` and pushes the result on stack.
+Multiply `x` by `y` and push the result on stack.
 
 ### = [x] [y]
-Pushes `T` on stack if `x` equals `y`, otherwise `F`.
+Push `T` on stack if `x` equals `y`, otherwise `F`.
 
 ### < [x] [y]
-Pushes `T` on stack if `x` is less than `y`, otherwise `F`.
+Push `T` on stack if `x` is less than `y`, otherwise `F`.
 
 ### > [x] [y]
-Pushes `T` on stack if `x` is greater than `y`, otherwise `F`.
+Push `T` on stack if `x` is greater than `y`, otherwise `F`.
 
 ### say [what]
-Prints `what` followed by newline to standard output.
+Print `what` followed by newline to standard output.
 
 ## VM
 The VM is primarily stack based, using registers for bindings.
