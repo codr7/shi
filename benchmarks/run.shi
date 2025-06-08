@@ -1,3 +1,11 @@
+method fact (acc n)
+  if = n 1
+    acc
+  else
+    fact * n acc - n 1
+
+say benchmark 500000 fact 1 15
+
 method fib (n Int)
   if < n 2
     n
@@ -5,4 +13,4 @@ method fib (n Int)
     + fib - n 1
       fib - n 2
 
-say benchmark 1000 fib 20
+say benchmark 500 fib 20
