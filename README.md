@@ -91,34 +91,6 @@ The type of methods like `+` and `-`, as well as user defined methods like `fib`
 ### Time
 Durations of time.
 
-## VM
-The VM is primarily stack based, using registers for bindings; and provides the following operations. Note that all implementations allow adding new operations from user code.
-
-### Operations
-#### Benchmark [rounds, end pc]
-Evaluate `rounds` times from the next operation to `end pc` and push elapsed time on stack.
-
-#### Call [location, target method]
-Call target method. Host methods are called directly while script methods push an entry on the call stack and jump to the start of the method.
-
-#### Branch [end pc]
-Pop value from stack and continue evaluating if it's truthy, otherwise jump to the end of the branch.
-
-#### Get [source register]
-Get value from `source register` and push on stack.
-
-#### Goto [target pc]
-Jump to `target pc`.
-
-#### Push [value]
-Push `value` on stack.
-
-#### Put [target register, count]
-Pop `count` values from stack and put in `target register`s.
-
-#### Return []
-Pop entry from call stack and jump to its return pc.
-
 ## Macros
 The following macros are provided, adding more is trivial.
 
@@ -151,4 +123,32 @@ Pushes `T` on stack if `x` is less than `y`, otherwise `F`.
 Pushes `T` on stack if `x` is greater than `y`, otherwise `F`.
 
 ### say [what]
-Prints `what` followed by newline to standard output. 
+Prints `what` followed by newline to standard output.
+
+## VM
+The VM is primarily stack based, using registers for bindings; and provides the following operations. Note that all implementations allow adding new operations from user code.
+
+### Operations
+#### Benchmark [rounds, end pc]
+Evaluate `rounds` times from the next operation to `end pc` and push elapsed time on stack.
+
+#### Call [location, target method]
+Call target method. Host methods are called directly while script methods push an entry on the call stack and jump to the start of the method.
+
+#### Branch [end pc]
+Pop value from stack and continue evaluating if it's truthy, otherwise jump to the end of the branch.
+
+#### Get [source register]
+Get value from `source register` and push on stack.
+
+#### Goto [target pc]
+Jump to `target pc`.
+
+#### Push [value]
+Push `value` on stack.
+
+#### Put [target register, count]
+Pop `count` values from stack and put in `target register`s.
+
+#### Return []
+Pop entry from call stack and jump to its return pc.
