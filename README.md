@@ -52,7 +52,7 @@ fib2 1.14576449
 ```
 
 ## Language
-The language implemented is a strictly prefix, dynamically typed scripting language capable of recursively generating the Fibinacci sequence. The syntax is intentionally kept as simple as possible.
+The language implemented is a strictly prefix, dynamically typed scripting language.
 
 ```
 method fib (n Int)
