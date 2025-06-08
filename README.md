@@ -126,9 +126,11 @@ Pushes `T` on stack if `x` is greater than `y`, otherwise `F`.
 Prints `what` followed by newline to standard output.
 
 ## VM
-The VM is primarily stack based, using registers for bindings; and provides the following operations. Note that all implementations allow adding new operations from user code.
+The VM is primarily stack based, using registers for bindings.
 
 ### Operations
+Note that all implementations allow easily adding new operations from user code.
+
 #### Benchmark [rounds, end pc]
 Evaluate `rounds` times from the next operation to `end pc` and push elapsed time on stack.
 
