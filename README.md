@@ -18,7 +18,7 @@ Along the way I kept switching host languages, moving ideas from language to lan
 This project in many ways represents the culmination of that work, and is offered with the hope of helping other developers get started designing and implementing their own languges.
 
 ## License
-The content of this tutorial is openly licensed via [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/).
+The content is openly licensed via [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/).
 
 ## Support
 I've decided to use an open license to benefit as many as possible, because I believe knowledge should be shared freely.
