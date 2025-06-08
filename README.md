@@ -31,7 +31,6 @@ The repository is set up for sponsoring via Stripe and Liberapay, alternatively 
 
 ## Implementations
 
-- [Go](https://github.com/codr7/shi-go)
 - [Java](https://github.com/codr7/shi-java)
 
 ## Language
@@ -50,13 +49,13 @@ method fib (n Int)
 The following types are provided.
 
 ### Binding
-The type of registers.
+The type of bindings (values in registers).
 
 ### Bool
 The boolean type has two values, `T` and `F`.
 
 ### Int
-Signed 32-bit integers.
+Signed 64-bit integers.
 
 ### Macro
 The type of macros like `method` and `if`.
@@ -71,25 +70,25 @@ Durations of time.
 The VM is primarily stack based, using registers for bindings; and provides the following operations. Note that all implementations allow adding new operations from user code.
 
 ### Benchmark [rounds, end pc]
-Evaluate until `end pc` `rounds` times and push elapsed time on stack.
+Evaluate `rounds` times from the next operation to `end pc` and push elapsed time on stack.
 
 ### Call [location, target method]
-Call target method.
+Call target method. Host methods are called directly while script methods push an entry on the call stack and jump to the start of the method.
 
 ### Branch [end pc]
 Pop value from stack and continue evaluating if it's truthy, otherwise jump to the end of the branch.
 
 ### Get [source register]
-Get value from register and push on stack.
+Get value from `source register` and push on stack.
 
 ### Goto [target pc]
-Jump to target pc.
+Jump to `target pc`.
 
 ### Push [value]
-Push value on stack.
+Push `value` on stack.
 
 ### Put [target register, count]
-Pop values from stack and put in registers.
+Pop `count` values from stack and put in `target register`s.
 
 ### Return []
-Pop call and jump to return pc.
+Pop entry from call stack and jump to its return pc.
