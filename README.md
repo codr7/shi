@@ -2,12 +2,12 @@
 a Simple Hackable Interpreter
 
 ## Goal
-The goal of this project is to implement the same simple, hackable interpreter core in multiple host languages. For educational purposes, and to allow comparing the performance and features of different host languages.
+The goal of this project is to implement the same simple, hackable interpreter core in multiple host languages. For educational purposes, and to allow comparing performance and optimal implementation strategies.
 
 ## Motivation
 I can't remember a time when I didn't feel the urge to design and implement my own programming languages, to gain a deeper understanding and make it possible to build my own tools.
 
-I started out with relatively primitive template languages and formula evaluators, but as I gained more experience the goal posts moved further and further towards general purpose languages.
+I started out with template engines and formula evaluators, but as I gained more experience the goal posts moved further and further towards general purpose languages.
 
 Most tutorials unfortunately start with parsing, which I consider to be the least interesting aspect. It wasn't until I discovered Forth that I managed to implement something I would consider using myself before running ut of motivation.
 
@@ -32,6 +32,24 @@ The repository is set up for sponsoring via Stripe and Liberapay, alternatively 
 ## Implementations
 
 - [Java](https://github.com/codr7/shi-java)
+
+## Performance
+
+Python3 is used as a performance baseline.
+
+```
+fact 0.28790313
+fib1 0.29931953
+fib2 0.44976327
+```
+
+Java
+
+```
+fact 0.86500816
+fib1 0.92455279
+fib2 1.14576449
+```
 
 ## Language
 The language implemented is a strictly prefix, dynamically typed scripting language capable of recursively generating the Fibinacci sequence. The syntax is intentionally kept as simple as possible.
