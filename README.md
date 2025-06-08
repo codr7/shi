@@ -100,6 +100,9 @@ The following macros are provided, adding more is trivial.
 ### benchmark [rounds] [body]
 Repeat `body` `rounds` times and push elapsed time on stack.
 
+### check [expected] [actual]
+Evaluate `actual` and compare to `expected`, throw an exception if they're not equal.
+
 ### if [cond] [expr1] else [expr2]
 Evaluate `expr1` if `cond` is truthy, else `expr2` (if provided).
 
@@ -139,8 +142,11 @@ Note that all implementations allow easily adding new operations from user code.
 #### Benchmark [rounds, end pc]
 Evaluate `rounds` times from the next operation to `end pc` and push elapsed time on stack.
 
-#### Call [location, target method]
+#### Call [target method, location]
 Call target method. Host methods are called directly while script methods push an entry on the call stack and jump to the start of the method.
+
+#### Check [expected, location]
+Pop value from stack and compare to `expected`, throw an exception if they're not equal.
 
 #### Branch [end pc]
 Pop value from stack and continue evaluating if it's truthy, otherwise jump to the end of the branch.
