@@ -11,6 +11,9 @@ check F > 1 2
 check T > 2 1
 check F > 1 2
 
+(check 1 if T 1)
+(check 2 if F 1 else 2)
+
 (method foo () 42
  check 42 foo)
 
