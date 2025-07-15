@@ -112,22 +112,22 @@ Define a new method with specified `name`, `arguments` and `body`. Arguments may
 ## Methods
 The following methods are provided, adding more is trivial.
 
-### + [x] [y]
+### + [x y]
 Add `x` to `y` and push the result on stack.
 
-### - [x] [y]
+### - [x y]
 Subtract `x` from `y` and push the result on stack.
 
-### * [x] [y]
+### * [x y]
 Multiply `x` by `y` and push the result on stack.
 
-### = [x] [y]
+### = [x y]
 Push `T` on stack if `x` equals `y`, otherwise `F`.
 
-### < [x] [y]
+### < [x y]
 Push `T` on stack if `x` is less than `y`, otherwise `F`.
 
-### > [x] [y]
+### > [x y]
 Push `T` on stack if `x` is greater than `y`, otherwise `F`.
 
 ### say [what]
@@ -139,29 +139,29 @@ The VM is primarily stack based, using registers for bindings.
 ### Operations
 Note that all implementations allow easily adding new operations from user code.
 
-#### Benchmark [rounds, end pc]
-Evaluate `rounds` times from the next operation to `end pc` and push elapsed time on stack.
+#### Benchmark [rounds end_pc]
+Evaluate `rounds` times from the next operation to `end_pc` and push elapsed time on stack.
 
-#### Call [target method, location]
-Call target method. Host methods are called directly while script methods push an entry on the call stack and jump to the start of the method.
+#### Call [target_method location]
+Call `target_method`. Host methods are called directly while script methods push an entry on the call stack and jump to the start of the method.
 
-#### Check [expected, location]
+#### Check [expected location]
 Pop value from stack and compare to `expected`, throw an exception if they're not equal.
 
-#### Branch [end pc]
+#### Branch [end_pc]
 Pop value from stack and continue evaluating if it's truthy, otherwise jump to the end of the branch.
 
-#### Get [source register]
-Get value from `source register` and push on stack.
+#### Get [source_register]
+Get value from `source_register` and push on stack.
 
-#### Goto [target pc]
-Jump to `target pc`.
+#### Goto [target_pc]
+Jump to `target_pc`.
 
 #### Push [value]
 Push `value` on stack.
 
-#### Put [target register, count]
-Pop `count` values from stack and put in `target register`s.
+#### Put [target_register, count]
+Pop `count` values from stack and put in `target_register`s.
 
 #### Return []
 Pop entry from call stack and jump to its return pc.
