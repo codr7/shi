@@ -160,7 +160,7 @@ Jump to `target_pc`.
 #### Push [value]
 Push `value` on stack.
 
-#### Put [target_register, count]
+#### Put [target_register count]
 Pop `count` values from stack and put in `target_register`s.
 
 #### Return []
