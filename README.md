@@ -5,7 +5,7 @@ a Simple Hackable Interpreter
 The goal of this project is to implement the same simple, hackable interpreter core in multiple host languages. For educational purposes, and to allow comparing performance and optimal implementation strategies.
 
 ## Motivation
-I can't remember a time when I didn't feel the urge to design and implement my own programming languages, to gain a deeper understanding and make it possible to build my own tools.
+I can't remember a time when I didn't feel the urge to design and implement my own programming languages, to gain a deeper understanding and enable building my own tools.
 
 I started out with template engines and formula evaluators, but as I gained more experience the goal posts moved further and further towards general purpose languages.
 
@@ -139,29 +139,29 @@ The VM is primarily stack based, using registers for bindings.
 ### Operations
 Note that all implementations allow easily adding new operations from user code.
 
-#### Benchmark [rounds end_pc]
+#### benchmark [rounds end_pc]
 Evaluate `rounds` times from the next operation to `end_pc` and push elapsed time on stack.
 
-#### Call [target_method location]
+#### call_method [target_method location]
 Call `target_method`. Host methods are called directly while script methods push an entry on the call stack and jump to the start of the method.
 
-#### Check [expected location]
+#### check_value [expected location]
 Pop value from stack and compare to `expected`, throw an exception if they're not equal.
 
-#### Branch [end_pc]
+#### branch [end_pc]
 Pop value from stack and continue evaluating if it's truthy, otherwise jump to the end of the branch.
 
-#### Get [source_register]
+#### get_register [source_register]
 Get value from `source_register` and push on stack.
 
-#### Goto [target_pc]
+#### goto [target_pc]
 Jump to `target_pc`.
 
-#### Push [value]
+#### push_value [value]
 Push `value` on stack.
 
-#### Put [target_register count]
+#### put_registers [target_register count]
 Pop `count` values from stack and put in `target_register`s.
 
-#### Return []
+#### return []
 Pop entry from call stack and jump to its return pc.
