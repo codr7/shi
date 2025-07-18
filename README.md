@@ -165,3 +165,30 @@ Pop `count` values from stack and put in `target_register`s.
 
 #### return []
 Pop entry from call stack and jump to its return pc.
+
+## Forms
+Forms are the bits and pieces that syntax consists of, shi supports the following kinds of forms:
+
+### Identifiers
+Identifiers are anything that's not a literal or list, for example `foo`.
+
+### Literals
+Literals are constant values, for example `42`.
+
+### Lists
+Lists are sequences of forms, for example `(foo 42)`
+
+## Readers
+Readers convert source code into sequences of forms by breaking constructs down recursively, shi supports the following readers:
+
+### Whitespace
+Skips forward as long as the current character is of type whitespace.
+
+### Identifier
+Consumes sequences of characters that are not whitespace, literals nor lists.
+
+### Int
+Consumes integers.
+
+### List
+Consumes lists of forms.
