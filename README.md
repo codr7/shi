@@ -151,8 +151,8 @@ Pop value from stack and compare to `expected`, throw an exception if they're no
 #### branch [end_pc]
 Pop value from stack and continue evaluating if it's truthy, otherwise jump to the end of the branch.
 
-#### get_register [source_register]
-Get value from `source_register` and push on stack.
+#### get_registers [source count]
+Get value from `source` register(s) and push on stack.
 
 #### goto [target_pc]
 Jump to `target_pc`.
@@ -160,11 +160,11 @@ Jump to `target_pc`.
 #### push_value [value]
 Push `value` on stack.
 
-#### put_registers [target_register count]
-Pop `count` values from stack and put in `target_register`s.
-
 #### return []
 Pop entry from call stack and jump to its return pc.
+
+#### set_registers [target count]
+Pop `count` values from stack and put in `target` register(s).
 
 ## Forms
 Forms are the bits and pieces that syntax consists of, shi supports the following kinds of forms:
@@ -175,8 +175,8 @@ Identifiers are anything that's not a literal or list, for example `foo`.
 ### Literals
 Literals are constant values, for example `42`.
 
-### Lists
-Lists are sequences of forms, for example `(foo 42)`
+### Scopes
+Scopes are sequences of forms, for example `(foo 42)`
 
 ## Readers
 Readers convert source code into sequences of forms by breaking constructs down recursively, shi supports the following readers:
@@ -190,5 +190,5 @@ Consumes sequences of characters that are not whitespace, literals nor lists.
 ### Int
 Consumes integers.
 
-### List
-Consumes lists of forms.
+### Scope
+Consumes sequences of forms.
