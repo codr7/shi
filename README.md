@@ -170,19 +170,19 @@ Pop `count` values from stack and put in `target` register(s).
 Forms are the bits and pieces that syntax consists of, shi supports the following kinds of forms:
 
 ### Identifiers
-Identifiers are anything that's not a literal or list, for example `foo`.
+Anything that's not a literal or list, for example `foo`.
 
 ### Literals
-Literals are constant values, for example `42`.
+Constant values, for example `42`.
 
 ### Scopes
-Scopes are sequences of forms, for example `(foo 42)`
+Sequences of forms, for example `(foo 42)`
 
 ## Readers
-Readers convert source code into sequences of forms by breaking constructs down recursively, shi supports the following readers:
+Readers consume source code and prduce sequences of forms by breaking syntactic constructs down recursively. The following readers are supported:
 
 ### Whitespace
-Skips forward as long as the current character is of type whitespace.
+Consumes sequences of whitespace.
 
 ### Identifier
 Consumes sequences of characters that are not whitespace, literals nor lists.
