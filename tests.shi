@@ -19,3 +19,12 @@ check F > 1 2
 
 (method foo (n Int) + n 1
  check 42 foo 41)
+
+(method fib (n)
+  if < n 2
+    n
+  else
+    + fib - n 1
+      fib - n 2
+
+ check 55 fib 10)
