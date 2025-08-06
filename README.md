@@ -31,24 +31,30 @@ The repository is set up for sponsoring via Stripe and Liberapay, alternatively 
 
 ## Implementations
 
+- [C](https://github.com/codr7/shi-c)
 - [Java](https://github.com/codr7/shi-java)
 
 ## Performance
 
 Python3 is used as a performance baseline.
-
 ```
-fact 0.28790313
-fib1 0.29931953
-fib2 0.44976327
+fact 532530451
+fib1 303582953
+fib2 441846114
+```
+
+C
+```
+fact 121506477
+fib1 1731184125
+fib2 97734804
 ```
 
 Java
-
 ```
-fact 0.86500816
-fib1 0.92455279
-fib2 1.14576449
+fact 1189205254
+fib1 1131634588
+fib2 1193296976
 ```
 
 ## Language
@@ -91,9 +97,6 @@ The type of macros like `method` and `if`.
 ### Method
 The type of methods like `+` and `-`, as well as user defined methods like `fib`.
 
-### Time
-Durations of time.
-
 ## Macros
 The following macros are provided, adding more is trivial.
 
@@ -102,7 +105,6 @@ Repeat `body` `rounds` times and push elapsed time on stack.
 
 ### check [expected] [actual]
 Evaluate `actual` and compare to `expected`, throw an exception if they're not equal.
-
 ### if [cond] [expr1] else [expr2]
 Evaluate `expr1` if `cond` is truthy, else `expr2` (if provided).
 

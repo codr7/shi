@@ -2,7 +2,7 @@ from timeit import Timer
 
 def benchmark(reps, setup, test):
     Timer(test, setup).timeit(reps)
-    return Timer(test, setup).timeit(reps)
+    return round(Timer(test, setup).timeit(reps) * 1000000000)
 
 print('fact', benchmark(500000, '''
 def fact(acc, n):
