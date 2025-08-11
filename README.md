@@ -45,20 +45,20 @@ fib2 441846114
 
 C
 ```
-fact 119616763
-fib1 1586808736
-fib2 93682570
+fact 1357571091
+fib1 1370970198
+fib2 1486216493
 ```
 
 Java
 ```
-fact 1189205254
-fib1 1131634588
-fib2 1193296976
+fact 1064277762
+fib1 1011048014
+fib2 922161095
 ```
 
 ## Language
-The language implemented out of the box is a strictly prefix, dynamically typed scripting language. The syntax is easy to replace/extend without touching other parts of the implementation.
+The language implemented out of the box is a strictly prefix, dynamically typed scripting language. The syntax is designed to be easy to replace/extend without touching other parts of the implementation.
 
 ```
 method fib (n Int)
@@ -77,7 +77,7 @@ say (1 2 3)
 `1 2 3`
 
 ## Types
-The following types are provided.
+The following types are provided:
 
 ### Any
 The root of all types.
@@ -100,16 +100,19 @@ The type of methods like `+` and `-`, as well as user defined methods like `fib`
 ## Macros
 The following macros are provided, adding more is trivial.
 
-### benchmark [rounds] [body]
+### benchmark [rounds body]
 Repeat `body` `rounds` times and push elapsed time on stack.
 
-### check [expected] [actual]
+### check [expected actual]
 Evaluate `actual` and compare to `expected`, throw an exception if they're not equal.
-### if [cond] [expr1] else [expr2]
+### if [cond expr1] else [expr2]
 Evaluate `expr1` if `cond` is truthy, else `expr2` (if provided).
 
-### method [name] [arguments] [body]
+### method [name arguments body]
 Define a new method with specified `name`, `arguments` and `body`. Arguments may optionally be suffixed with a type, which is checked when the method is called; defaults to `Any` if not provided.
+
+### return [value]
+Emit arguments and goto start of method if `value` is a SHI-method, otherwise emit `value` and exit the current call.
 
 ## Methods
 The following methods are provided, adding more is trivial.

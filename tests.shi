@@ -20,11 +20,29 @@ check F > 1 2
 (method foo (n Int) + n 1
  check 42 foo 41)
 
-(method fib (n)
+(method fact (acc n)
+  if = n 1
+    acc
+  else
+    return fact * n acc - n 1
+
+ check 3628800 fact 1 10)
+
+(method fib1 (n)
   if < n 2
     n
   else
-    + fib - n 1
-      fib - n 2
+    + fib1 - n 1
+      fib1 - n 2
 
- check 55 fib 10)
+ check 55 fib1 10)
+
+(method fib2 (n a b)
+  if > n 1
+    return fib2 - n 1 b + a b
+  else if = n 0
+    a
+  else
+    b
+
+  check 55 fib2 10 0 1)

@@ -2,7 +2,7 @@ method fact (acc n)
   if = n 1
     acc
   else
-    fact * n acc - n 1
+    return fact * n acc - n 1
 
 say benchmark 500000 fact 1 15
 
@@ -17,7 +17,7 @@ say benchmark 500 fib1 20
 
 method fib2 (n a b)
   if > n 1
-    fib2 - n 1 b + a b
+    return fib2 - n 1 b + a b
   else if = n 0
     a
   else
